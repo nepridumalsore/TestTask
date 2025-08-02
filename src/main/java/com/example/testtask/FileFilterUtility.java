@@ -55,7 +55,6 @@ public class FileFilterUtility {
         String prefix = "";
         List<String> inputFiles = new ArrayList<>();
 
-        // Parse arguments
         for (int i = 0; i < args.length; i++) {
             switch (args[i]) {
                 case "-a":
@@ -85,7 +84,6 @@ public class FileFilterUtility {
             throw new IllegalArgumentException("No input files specified");
         }
 
-        // Ensure output directory exists
         if (!outputPath.isEmpty()) {
             Path dir = Paths.get(outputPath);
             if (!Files.exists(dir)) {
@@ -96,7 +94,6 @@ public class FileFilterUtility {
             }
         }
 
-        // Process files
         Stats intStats = new Stats();
         Stats floatStats = new Stats();
         Stats stringStats = new Stats();
